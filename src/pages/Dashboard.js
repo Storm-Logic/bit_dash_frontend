@@ -13,7 +13,7 @@ export default function Dashboard() {
 
     const add = async () => {
         try {
-            const res = await axios.post("http://localhost:8000/add", {
+            const res = await axios.post("https://await-glamorous-wafer.ngrok-free.dev/add", {
 
                 a: 1,
                 b: "sample",
@@ -35,7 +35,11 @@ export default function Dashboard() {
             setError("");
             console.log(12)
             const res = await axios.get(
-                `http://localhost:8000/subnet/${netuid}`
+                `https://await-glamorous-wafer.ngrok-free.dev/subnet/${netuid}`, {
+                headers: {
+                    "ngrok-skip-browser-warning": "true",
+                },
+            }
             );
             console.log(34)
             setSubData(res.data);
