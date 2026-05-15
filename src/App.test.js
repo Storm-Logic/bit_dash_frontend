@@ -11,5 +11,6 @@ test('renders dashboard', async () => {
 
   expect(screen.getByText(/bittensor dashboard/i)).toBeInTheDocument();
   expect(screen.getByRole('button', { name: /load/i })).toBeInTheDocument();
-  expect(await screen.findByText(/^price: 0$/i)).toBeInTheDocument();
+  expect(await screen.findByText(/subnet price/i)).toBeInTheDocument();
+  expect(screen.getByLabelText(/subnet activity animation/i)).toBeInTheDocument();
 });
